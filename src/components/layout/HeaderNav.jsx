@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router'
+import { OnMouseEnter } from '../OnMouseEnter';
 export const HeaderNav = () => {
-  return (
+    const onMouseEnter = ()=>{};
+    const onMouseLeave = ()=>{};
+return (
    <header className="content__header">
     <div className="content__logo">
         <span className='logo'></span>
@@ -14,7 +17,7 @@ export const HeaderNav = () => {
                 <NavLink to='/inicio'>Inicio</NavLink>
             </li>
             <li>
-                <NavLink to='/hombre'>Hombre</NavLink>
+                <NavLink to='/hombre' onMouseEnter={onMouseEnter}>Hombre</NavLink>
             </li>
             <li>
                 <NavLink to='/mujer'>Mujer</NavLink>
