@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router';
 import { HeaderNav } from '../components/layout/HeaderNav';
-import { Inicio } from '../components/Inicio';
-import { Hombre } from '../components/Hombre';
-import { Mujer } from '../components/Mujer';
-import { Niños } from '../components/Niños';
-import { Rebajas } from '../components/Rebajas';
+import { Inicio } from '../components/layout/Inicio';
+import { Hombre } from '../components/layout/Hombre';
+import { Mujer } from '../components/layout/Mujer';
+import { Niños } from '../components/layout/Niños';
+import { Rebajas } from '../components/layout/Rebajas';
 
 export const Rutas = () => {
   return (
