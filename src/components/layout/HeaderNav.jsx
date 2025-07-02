@@ -10,15 +10,26 @@ export const HeaderNav = () => {
      * que renderiza en una lista los elementos del objeto submenu.
      */
     const [enter, setEnter] = useState(null);
+
+
+    /**
+     * Constantes personas y rebajas se utilizarán pasandolas
+     * como props al componente MostrarSubmenu y en función de cual
+     * se mande se renderizará un listado u otro
+     */
     
     const personas = 'personas';
     const rebajas = 'rebajas';
+
     const onMouseLeave = ()=> {
         setEnter(null);
         console.log('Al quitar el puntero el estado de enter ha cambiado a: ' + enter);
     };
 
-    
+    /**
+     * El objeto subMenu será el que se renderice en la lista
+     * cuando personas se pase como props a MostarSubmenu
+     */
 
     const subMenu = [
         {
@@ -34,6 +45,12 @@ export const HeaderNav = () => {
             categoria: 'Running'
         }
     ];
+
+
+    /**
+     * El objeto subMenuRebajas será el que se renderice en la lista
+     * cuando rebajas se pase como props a MostrarSbumenu
+     */
 
     const subMenuRebajas = [
         {
