@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import { MostrarSubmenu } from '../MostrarSubmenu';
 export const HeaderNav = () => {
 
@@ -83,7 +83,7 @@ return (
             <li onMouseEnter={()=> {setEnter('hombre');
                 console.log('El estado de enter ha cambiado a: '+ enter);
                 }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/hombre'>Hombre</NavLink>
+                <NavLink to='/hombre' state={{persona: 'hombre'}}>Hombre</NavLink>
                 <div>
                     {enter == 'hombre' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
                 </div>
@@ -92,7 +92,7 @@ return (
                 setEnter('mujer');
                 console.log('El estado de enter ha cambiado a: '+ enter);
                 }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/mujer'>Mujer</NavLink>
+                <NavLink to='/mujer' state={{persona: 'mujer'}}>Mujer</NavLink>
                 <div>
                     {enter == 'mujer' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
                 </div>
@@ -101,7 +101,7 @@ return (
                 setEnter('niños');
                 console.log('El estado de enter ha cambiado a: '+ enter);
                 }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/niños'>Niños</NavLink>
+                <NavLink to='/niños' state={{persona: 'niños'}}>Niños</NavLink>
                 <div>
                     {enter == 'niños' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
                 </div>

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import { HeaderNav } from '../components/layout/HeaderNav';
 import { Inicio } from '../components/layout/Inicio';
-import { Hombre } from '../components/layout/Hombre';
-import { Mujer } from '../components/layout/Mujer';
-import { Niños } from '../components/layout/Niños';
 import { Rebajas } from '../components/layout/Rebajas';
+import { NotFound } from '../components/layout/NotFound';
+import { Personas } from '../components/layout/Personas';
 
 export const Rutas = () => {
   return (
@@ -14,11 +13,14 @@ export const Rutas = () => {
 
     <section className="content">
         <Routes>
+            <Route path='/' element={<Inicio/>}/>
             <Route path='/inicio' element={<Inicio/>}/>
-            <Route path='/hombre' element={<Hombre/>}/>
-            <Route path='/mujer' element={<Mujer/>}/>
-            <Route path='/niños' element={<Niños/>}/>
+            <Route path='/hombre' element={<Personas/>}/>
+            <Route path='/mujer' element={<Personas/>}/>
+            <Route path='/niños' element={<Personas/>}/>
             <Route path='/rebajas' element={<Rebajas/>}/>
+            <Route path='/error' element={<NotFound/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     </section>
     </BrowserRouter>
