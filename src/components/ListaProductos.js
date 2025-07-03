@@ -7,7 +7,8 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'maxima 23',
         color: 'Negro',
-        url: 'D:/Descargas/zapatillas/futbol/hombre/joma-maxima-2331.jpeg'
+        url: '/img/zapatillas/futbol/hombre/joma-maxima-2331.jpg',
+        alt: 'Zapatillas Joma de fútbol de color negro'
     },
     {
         id: 1,
@@ -17,7 +18,8 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'mercurial vapor',
         color: 'Naranja',
-        url: 'D:/Descargas/zapatillas/futbol/hombre/nike-mercurial-vapor.jpeg'
+        url: '/img/zapatillas/futbol/hombre/nike-mercurial-vapor.jpg',
+        alt: 'Zapatillas Nike de fútbol de color naranja'
     },
     {
         id: 2,
@@ -27,6 +29,18 @@ export const Productos = [
         marca: 'Munich',
         modelo: 'rondo07',
         color: 'Naranja',
-        url: 'D:/Descargas/zapatillas/futbol/hombre/munich-rondo07.jpeg'
+        url: '/img/zapatillas/futbol/hombre/munich-rondo07.jpg',
+        alt: 'Zapatillas Munich de color naranja'
+    },
+    {
+        id: 3,
+        persona: 'mujer',
+        categoria: 'futbol',
+        talla: ['40', '41', '42', '43', '44', '45', '46', '47', '48'],
+        marca: 'Munich',
+        modelo: 'rondo07',
+        color: 'Naranja',
+        url: '/img/zapatillas/futbol/hombre/munich-rondo07.jpg',
+        alt: 'Zapatillas Munich de color naranja'
     }
 ];
