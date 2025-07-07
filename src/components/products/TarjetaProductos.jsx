@@ -9,10 +9,10 @@ import React from 'react';
 
 export const TarjetaProductos = ({producto}) => {
   return (
-        <div key={producto.id}>
+        <div key={producto.id} className='product'>
             <img src={producto.url} alt={producto.alt} width='150px' height='150px'/>
             <div>
-            <h3>Descripciíon producto</h3>
+            <h3>Descripción producto</h3>
             <ul>
                 <li>{producto.categoria}</li>
                 <li>{producto.marca}</li>

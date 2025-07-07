@@ -42,7 +42,7 @@ export const Personas = () => {
         
             
   return (
-    <div>
+    <div className='content__products'>
         {productosFiltrados.map(producto =>{
             return <TarjetaProductos key={producto.id} producto={producto}/>
         })}
