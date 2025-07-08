@@ -12,6 +12,7 @@ export const Rutas = () => {
     <HeaderNav/>
 
     <section className="content">
+      <aside className='content__sidebar'>filtrar</aside>
         <Routes>
             <Route path='/' element={<Inicio/>}/>
             <Route path='/inicio' element={<Inicio/>}/>
@@ -22,6 +23,8 @@ export const Rutas = () => {
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
         </Routes>
+        
+        <aside className='content__sidebar'>anuncios</aside>
     </section>
     </BrowserRouter>
   )

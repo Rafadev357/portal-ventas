@@ -22,8 +22,8 @@ export const HeaderNav = () => {
     const rebajas = 'rebajas';
 
     const onMouseLeave = ()=> {
-        setEnter(null);
-        console.log('Al quitar el puntero el estado de enter ha cambiado a: ' + enter);
+        setTimeout(()=>{setEnter(null);
+        console.log('Al quitar el puntero el estado de enter ha cambiado a: ' + enter);}, 5000);
     };
 
     /**
@@ -78,41 +78,57 @@ return (
     <nav>
         <ul>
             <li>
-                <NavLink to='/inicio'>Inicio</NavLink>
+                <NavLink to='/inicio' className='menu__link'>Inicio</NavLink>
             </li>
-            <li onMouseEnter={()=> {setEnter('hombre');
-                console.log('El estado de enter ha cambiado a: '+ enter);
-                }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/hombre' state={{persona: 'hombre'}}>Hombre</NavLink>
-                <div>
-                    {enter == 'hombre' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
+            <li>
+                <div onMouseEnter={()=> {setEnter('hombre');
+                    console.log('El estado de enter ha cambiado a: '+ enter);
+                    }} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                        <NavLink to='/hombre' state={{persona: 'hombre'}} className='menu__link'>Hombre</NavLink>
+                    
+                        {enter == 'hombre' && <div className='submenu'>
+                                <MostrarSubmenu submenu = {subMenu} value={personas}/>
+                             </div>
+                            }
+                   
+                </div>
+                
+            </li>
+            <li>
+                <div onMouseEnter={()=> {
+                    setEnter('mujer');
+                    console.log('El estado de enter ha cambiado a: '+ enter);
+                    }} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                    <NavLink to='/mujer' state={{persona: 'mujer'}} className='menu__link'>Mujer</NavLink>
+                    
+                        {enter == 'mujer' && <div className='submenu'>
+                            <MostrarSubmenu submenu = {subMenu} value={personas}/>
+                        </div>
+                        }
+                    
                 </div>
             </li>
-            <li onMouseEnter={()=> {
-                setEnter('mujer');
-                console.log('El estado de enter ha cambiado a: '+ enter);
-                }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/mujer' state={{persona: 'mujer'}}>Mujer</NavLink>
-                <div>
-                    {enter == 'mujer' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
+            <li>
+                <div onMouseEnter={()=> {
+                    setEnter('niños');
+                    console.log('El estado de enter ha cambiado a: '+ enter);
+                    }} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                        <NavLink to='/niños' state={{persona: 'niños'}} className='menu__link'>Niños</NavLink>
+                            {enter == 'niños' && <div className='submenu'>
+                            <MostrarSubmenu submenu = {subMenu} value={personas}/>
+                        </div>}
                 </div>
             </li>
-            <li onMouseEnter={()=> {
-                setEnter('niños');
-                console.log('El estado de enter ha cambiado a: '+ enter);
-                }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/niños' state={{persona: 'niños'}}>Niños</NavLink>
-                <div>
-                    {enter == 'niños' && <MostrarSubmenu submenu = {subMenu} value={personas}/>}
-                </div>
-            </li>
-            <li onMouseEnter={()=> {
+            <li>
+                <div onMouseEnter={()=> {
                 setEnter('rebajas');
                 console.log('El estado de enter ha cambiado a: '+ enter);
-                }} onMouseLeave={onMouseLeave}>
-                <NavLink to='/rebajas'>Rebajas</NavLink>
-                <div>
-                    {enter == 'rebajas' && <MostrarSubmenu submenu = {subMenuRebajas} value={rebajas}/>}
+                }} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                    <NavLink to='/rebajas' className='menu__link'>Rebajas</NavLink>
+                        {enter == 'rebajas' && <div className='submenu'>
+                            <MostrarSubmenu submenu = {subMenuRebajas} value={rebajas}/>
+                        </div>
+                        }
                 </div>
             </li>
         </ul>

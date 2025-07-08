@@ -8,21 +8,11 @@ import React from 'react'
  */
 
 export const MostrarSubmenu = ({submenu, value}) => {
-    if(value == 'personas'){
         return (
-            <ul className='submenu'>
+            <ul className='submenu__list'>
                         {submenu.map(item =>{
-                    return <li key={item.id}>{item.categoria}</li>
+                    return <li key={item.id}><input type='submit' value={item.categoria}/></li>
                 })}
             </ul>
         )
-    }else{
-        return (
-            <ul className='submenu'>
-                        {submenu.map(item =>{
-                    return <li key={item.id}>{item.categoria}</li>
-                })}
-            </ul>
-        )
-    }
 }
