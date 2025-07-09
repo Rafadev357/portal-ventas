@@ -312,7 +312,7 @@ export const Productos = [
         alt: 'Zapatillas Joma de color negro'
     },
     {
-        id: 2,
+        id: 26,
         persona: 'hombre',
         categoria: 'running',
         unidades: 10,

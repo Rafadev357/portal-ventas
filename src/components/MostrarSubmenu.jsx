@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 /**
  * 
@@ -7,11 +8,22 @@ import React from 'react'
  * que componen el objeto submenu.
  */
 
-export const MostrarSubmenu = ({submenu, value}) => {
+export const MostrarSubmenu = ({submenu, asignarCategoria}) => {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const {persona} = location.state || {};
         return (
             <ul className='submenu__list'>
                         {submenu.map(item =>{
-                    return <li key={item.id}><input type='submit' value={item.categoria}/></li>
+                    return <li key={item.id}><button onClick={()=>{
+                        navigate(`/${persona}`, {
+                            state: {
+                                persona,
+                                categoria: item.categoria
+                            }
+                        })
+                    }}>{item.categoria}</button></li>
                 })}
             </ul>
         )

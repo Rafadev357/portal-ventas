@@ -17,6 +17,7 @@ export const Personas = () => {
          */
         const navigate = useNavigate();
         const {persona} = location.state || {};
+        const {categoria} = location.state || {};
 
         /**
          * Con useEffect validamos si el valor de `persona` está definido.
@@ -29,23 +30,48 @@ export const Personas = () => {
             }
         }, [persona, navigate]);
 
-        // Filtrar los productos según la propiedad persona recibida
-        const productosFiltrados = Productos.filter(
-            (producto)=> persona && producto.persona.includes(persona)
-        );
 
-        // En caso de no haber producto se muestra un mensaje informativo
-        if(productosFiltrados.length === 0){
-            return <p>No se encontraron productos para {persona}</p>
-        }
-        console.log(persona);
-        
+        if(persona && !categoria){
+
+                // Filtrar los productos según la propiedad persona recibida
+                const productosFiltrados = Productos.filter(
+                    (producto)=> persona && producto.persona.includes(persona)
+                );
+
+                // En caso de no haber producto se muestra un mensaje informativo
+                if(productosFiltrados.length === 0){
+                    return <p>No se encontraron productos para {persona}</p>
+                }
+                console.log(persona);
             
-  return (
-    <div className='content__products'>
-        {productosFiltrados.map(producto =>{
-            return <TarjetaProductos key={producto.id} producto={producto}/>
-        })}
-    </div>
-  )
+                    
+        return (
+            <div className='content__products'>
+                {productosFiltrados.map(producto =>{
+                    return <TarjetaProductos key={producto.id} producto={producto}/>
+                })}
+            </div>
+        )
+        }else{
+            const cat_minusculas = categoria.toLowerCase();
+            console.log(cat_minusculas);
+            const productosFiltrados = Productos.filter(
+                (producto)=>{
+                    persona && producto.persona.includes(persona) && 
+                    producto.categoria.includes(cat_minusculas)
+                }
+            );
+
+            if(productosFiltrados.length === 0){
+                return <p>No se encontraron productos para {persona} y {categoria}</p>
+            }
+
+            return(
+                <div className='content__products'>
+                    {productosFiltrados.map(producto =>{
+                        return <TarjetaProductos key={producto.id} producto = {producto}/>
+                    })}
+                </div>
+            )
+        }
 }
