@@ -57,8 +57,9 @@ export const Personas = () => {
             console.log(cat_minusculas);
             const productosFiltrados = Productos.filter(
                 (producto)=>{
-                    persona && producto.persona.includes(persona) && 
-                    producto.categoria.includes(cat_minusculas)
+                    const filtrado_personas = producto.persona.includes(persona); 
+                    const filtrado_categoria = producto.categoria.includes(cat_minusculas);
+                    return filtrado_categoria && filtrado_personas;
                 }
             );
 
