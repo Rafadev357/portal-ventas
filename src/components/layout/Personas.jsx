@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Productos } from '../products/Productos';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TarjetaProductos } from '../products/TarjetaProductos';
+import { FiltroProductos } from '../forms/FiltroProductos';
 
 export const Personas = () => {
         /**
@@ -46,11 +47,18 @@ export const Personas = () => {
             
                     
         return (
-            <div className='content__products'>
-                {productosFiltrados.map(producto =>{
-                    return <TarjetaProductos key={producto.id} producto={producto}/>
-                })}
-            </div>
+            <>
+                <aside className='content__sidebar'>
+                    <FiltroProductos/>
+                </aside>
+                <div className='content__products'>
+                    {productosFiltrados.map(producto =>{
+                        return <TarjetaProductos key={producto.id} producto={producto}/>
+                    })}
+                </div>
+                <aside className='content__sidebar'>anuncios</aside>
+            </>
+            
         )
         }else{
             const cat_minusculas = categoria.toLowerCase();
@@ -68,11 +76,15 @@ export const Personas = () => {
             }
 
             return(
-                <div className='content__products'>
-                    {productosFiltrados.map(producto =>{
-                        return <TarjetaProductos key={producto.id} producto = {producto}/>
-                    })}
-                </div>
+                <>
+                    <aside className='content__sidebar'>filtrar</aside>
+                    <div className='content__products'>
+                        {productosFiltrados.map(producto =>{
+                            return <TarjetaProductos key={producto.id} producto = {producto}/>
+                        })}
+                    </div>
+                    <aside className='content__sidebar'>anuncios</aside>
+                </>
             )
         }
 }
