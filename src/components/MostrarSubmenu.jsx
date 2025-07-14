@@ -8,11 +8,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
  * que componen el objeto submenu.
  */
 
-export const MostrarSubmenu = ({submenu, asignarCategoria}) => {
+export const MostrarSubmenu = ({submenu, persona}) => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const {persona} = location.state || {};
+    //const {persona} = location.state || {};
         return (
             <ul className='submenu__list'>
                         {submenu.map(item =>{

@@ -101,7 +101,7 @@ return (
                         <NavLink to='/hombre' state={{persona: 'hombre'}} className='menu__link'>Hombre</NavLink>
                     
                         {enter == 'hombre' && <div className='submenu'>
-                                <MostrarSubmenu submenu = {subMenu}/>
+                                <MostrarSubmenu submenu = {subMenu} persona= 'hombre'/>
                              </div>
                             }
                    
@@ -113,7 +113,7 @@ return (
                     <NavLink to='/mujer' state={{persona: 'mujer'}} className='menu__link'>Mujer</NavLink>
                     
                         {enter == 'mujer' && <div className='submenu'>
-                            <MostrarSubmenu submenu = {subMenu}/>
+                            <MostrarSubmenu submenu = {subMenu} persona = 'mujer'/>
                         </div>
                         }
                     
@@ -123,7 +123,7 @@ return (
                 <div onMouseEnter={()=>onMouseEnter('niños')} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
                         <NavLink to='/niños' state={{persona: 'niños'}} className='menu__link'>Niños</NavLink>
                             {enter == 'niños' && <div className='submenu'>
-                            <MostrarSubmenu submenu = {subMenu}/>
+                            <MostrarSubmenu submenu = {subMenu} persona = 'niños'/>
                         </div>}
                 </div>
             </li>
