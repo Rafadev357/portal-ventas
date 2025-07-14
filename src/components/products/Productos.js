@@ -8,7 +8,7 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'maxima 23',
         precio: 75,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/futbol/hombre/joma-maxima-2331.jpg',
         alt: 'Zapatillas Joma de fútbol de color negro'
     },
@@ -21,7 +21,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'mercurial vapor',
         precio: 80,
-        color: 'Naranja',
+        color: 'naranja',
         url: '/img/zapatillas/futbol/hombre/nike-mercurial-vapor.jpg',
         alt: 'Zapatillas Nike de fútbol de color naranja'
     },
@@ -34,7 +34,7 @@ export const Productos = [
         marca: 'Munich',
         modelo: 'rondo07',
         precio: 35,
-        color: 'Blanco, azul y verde',
+        color: 'blanco, azul y verde',
         url: '/img/zapatillas/futbol/hombre/munich-rondo07.jpg',
         alt: 'Zapatillas Munich de color blanco, azul y verde'
     },
@@ -47,7 +47,7 @@ export const Productos = [
         marca: 'Lotto',
         modelo: 'stadio 200',
         precio: 100,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/futbol/mujer/botas-lotto-stadio-200-iii-fg-50.jpg',
         alt: 'Zapatillas Lotto de color negro'
     },
@@ -60,7 +60,7 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'reactive 25',
         precio: 86,
-        color: 'Blanco y azul',
+        color: 'blanco y azul',
         url: '/img/zapatillas/futbol/mujer/joma_fs_reactive25.jpg',
         alt: 'Zapatillas Joma de color blanco y azul'
     },
@@ -73,7 +73,7 @@ export const Productos = [
         marca: 'Mizuno',
         modelo: 'reactive 25',
         precio: 60,
-        color: 'Azul y blanco',
+        color: 'azul y blanco',
         url: '/img/zapatillas/futbol/mujer/zapatillas-futbol-mizuno-mrl-sala-club.jpg',
         alt: 'Zapatillas Joma de color azul y blanco'
     },
@@ -86,7 +86,7 @@ export const Productos = [
         marca: 'Adidas',
         modelo: 'Predator',
         precio: 42,
-        color: 'Azul, blanco y naranja',
+        color: 'azul, blanco y naranja',
         url: '/img/zapatillas/futbol/niño/adidas-predator.jpg',
         alt: 'Zapatillas Joma de color azul, blanco y naranja'
     },
@@ -99,7 +99,7 @@ export const Productos = [
         marca: 'Kappa',
         modelo: 'Player Pro',
         precio: 55,
-        color: 'Plateada',
+        color: 'plateada',
         url: '/img/zapatillas/futbol/niño/kappa-futbol-sala.jpg',
         alt: 'Zapatillas Kappa de color plata'
     },
@@ -112,7 +112,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'Phanton',
         precio: 41,
-        color: 'Azul claro',
+        color: 'azul claro',
         url: '/img/zapatillas/futbol/niño/nike-phantom.jpg',
         alt: 'Zapatillas Nike de color azul claro'
     },
@@ -125,7 +125,7 @@ export const Productos = [
         marca: 'DC',
         modelo: 'Court Graffik',
         precio: 120,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/casual/hombre/DC-CourtGraffik.jpg',
         alt: 'Zapatillas DC de color negro'
     },
@@ -138,7 +138,7 @@ export const Productos = [
         marca: 'Ecko UnItd',
         modelo: 'Riverside',
         precio: 180,
-        color: 'Blanco y azul',
+        color: 'blanco y azul',
         url: '/img/zapatillas/casual/hombre/Ecko-UnItd-riverside.jpg',
         alt: 'Zapatillas Ecko UnItd de color blanco y azul'
     },
@@ -164,7 +164,7 @@ export const Productos = [
         marca: 'Converse',
         modelo: 'All star',
         precio: 77,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/casual/mujer/converse-all-star-negras.jpg',
         alt: 'Zapatillas Converse de color negro'
     },
@@ -177,7 +177,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'Air Jordan',
         precio: 158,
-        color: 'Rosa, blanco y negro',
+        color: 'rosa, blanco y negro',
         url: '/img/zapatillas/casual/mujer/nike_airjordan.jpg',
         alt: 'Zapatillas Nike de color rosa, blanco y negro'
     },
@@ -190,7 +190,7 @@ export const Productos = [
         marca: 'Zoo york',
         modelo: 'roxbury',
         precio: 115,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/casual/mujer/zooyork_roxbury.jpg',
         alt: 'Zapatillas Zoo york de color negro'
     },
@@ -203,7 +203,7 @@ export const Productos = [
         marca: 'Adidas',
         modelo: 'Campus',
         precio: 88,
-        color: 'Verde',
+        color: 'verde',
         url: '/img/zapatillas/casual/niño/adidas-campus.jpg',
         alt: 'Zapatillas Adidas de color verde'
     },
@@ -216,7 +216,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'Air Jordan',
         precio: 95,
-        color: 'Marrón',
+        color: 'marrón',
         url: '/img/zapatillas/casual/niño/nike-air-jordan-1-mocha.jpg',
         alt: 'Zapatillas Nike de color marrón'
     },
@@ -229,7 +229,7 @@ export const Productos = [
         marca: 'Vans',
         modelo: 'Old Skool',
         precio: 70,
-        color: 'Azul',
+        color: 'azul',
         url: '/img/zapatillas/casual/niño/vans-old-skool-v.jpg',
         alt: 'Zapatillas Vans de color azul'
     },
@@ -242,7 +242,7 @@ export const Productos = [
         marca: 'Adidas',
         modelo: 'Ultraboost',
         precio: 36,
-        color: 'Azul',
+        color: 'azul',
         url: '/img/zapatillas/running/niño/adidas_ultraboost.jpg',
         alt: 'Zapatillas Adidas de color azul'
     },
@@ -255,7 +255,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'Revolution 7',
         precio: 49,
-        color: 'Blanco, azul y verde',
+        color: 'blanco, azul y verde',
         url: '/img/zapatillas/running/niño/zapatilla-nike-revolution-7.jpg',
         alt: 'Zapatillas Nike de color blanco, azul y verde'
     },
@@ -268,7 +268,7 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'Ultraboost',
         precio: 52,
-        color: 'Negro y naranja',
+        color: 'negro y naranja',
         url: '/img/zapatillas/running/niño/zapatillas-casual-ferro-22-junior-negro-naranja.jpg',
         alt: 'Zapatillas Joma de color negro y naranja'
     },
@@ -281,7 +281,7 @@ export const Productos = [
         marca: 'Adidas',
         modelo: 'Supernova rise',
         precio: 120,
-        color: 'Blanco, azul y rosa',
+        color: 'blanco, azul y rosa',
         url: '/img/zapatillas/running/mujer/adidas_supernova_rise.jpg',
         alt: 'Zapatillas Adidas de color blanco, azul y rosa'
     },
@@ -294,7 +294,7 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'Speed lady',
         precio: 46,
-        color: 'Azul claro',
+        color: 'azul claro',
         url: '/img/zapatillas/running/mujer/joma_speed_lady_25.jpg',
         alt: 'Zapatillas Joma de color azul claro'
     },
@@ -307,7 +307,7 @@ export const Productos = [
         marca: 'Under armour',
         modelo: 'Turbulence',
         precio: 90,
-        color: 'Rosa',
+        color: 'rosa',
         url: '/img/zapatillas/running/mujer/under-armour_hovr_turbulence_2.jpg',
         alt: 'Zapatillas Under armour de color rosa'
     },
@@ -320,7 +320,7 @@ export const Productos = [
         marca: 'Nike',
         modelo: 'Revolution 7',
         precio: 150,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/running/hombre/DH4071-001-PHCFH001.jpg',
         alt: 'Zapatillas Nike de color negro'
     },
@@ -333,7 +333,7 @@ export const Productos = [
         marca: 'Joma',
         modelo: 'Speed men',
         precio: 40,
-        color: 'Negro',
+        color: 'negro',
         url: '/img/zapatillas/running/hombre/joma-running-speed-men-24-hombre-negro.jpg',
         alt: 'Zapatillas Joma de color negro'
     },
@@ -346,7 +346,7 @@ export const Productos = [
         marca: 'On',
         modelo: 'Cloud moster 2',
         precio: 87,
-        color: 'Gris',
+        color: 'gris',
         url: '/img/zapatillas/running/hombre/on-cloudmonster-2-running.jpg',
         alt: 'Zapatillas On de color Gris'
     },

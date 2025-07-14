@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Productos } from '../products/Productos';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TarjetaProductos } from '../products/TarjetaProductos';
@@ -19,6 +19,7 @@ export const Personas = () => {
         const navigate = useNavigate();
         const {persona} = location.state || {};
         const {categoria} = location.state || {};
+        const [filtros, setFiltros] = useState(null);
 
         /**
          * Con useEffect validamos si el valor de `persona` está definido.
@@ -31,10 +32,20 @@ export const Personas = () => {
             }
         }, [persona, navigate]);
 
+        //Esta función se encarga de actualizar el estado de la variable filtros con los datos del formulario
+        const manejarFiltros = (data)=>{
+            setFiltros(data);
+        };
+        console.log('Estos son los filtros recogidos del componente FiltroProductos: ', filtros);
+        console.log('Se está renderizando ProductosFiltrados');
 
-        if(persona && !categoria){
+        if(persona && !categoria && filtros){
 
-                // Filtrar los productos según la propiedad persona recibida
+            return <ProductosFiltrados productos={Productos} filtros={filtros}/>
+
+                
+        }else if(persona && !categoria){
+            // Filtrar los productos según la propiedad persona recibida
                 const productosFiltrados = Productos.filter(
                     (producto)=> persona && producto.persona.includes(persona)
                 );
@@ -45,21 +56,21 @@ export const Personas = () => {
                 }
                 console.log(persona);
             
-                    
-        return (
-            <>
-                <aside className='content__sidebar'>
-                    <FiltroProductos/>
-                </aside>
-                <div className='content__products'>
-                    {productosFiltrados.map(producto =>{
-                        return <TarjetaProductos key={producto.id} producto={producto}/>
-                    })}
-                </div>
-                <aside className='content__sidebar'>anuncios</aside>
-            </>
-            
-        )
+        
+            return (
+                <>
+                    <aside className='content__sidebar'>
+                        <FiltroProductos onFiltrar={manejarFiltros}/>
+                    </aside>
+                    <div className='content__products'>
+                        {productosFiltrados.map(producto =>{
+                            return <TarjetaProductos key={producto.id} producto={producto}/>
+                        })}
+                    </div>
+                    <aside className='content__sidebar'>anuncios</aside>
+                </>
+                
+            )
         }else{
             const cat_minusculas = categoria.toLowerCase();
             console.log(cat_minusculas);
@@ -87,4 +98,28 @@ export const Personas = () => {
                 </>
             )
         }
+}
+
+function ProductosFiltrados({productos, filtros}){
+
+    console.log('Filtros recibidos: ', filtros);
+    console.log('Productos recibidos: ', productos);
+    const filtrados = productos.filter((producto)=>{
+        console.log('Evaluando producto: ', producto);
+        const marcaOk = filtros.marca ? producto.marca === filtros.marca : true;
+        const tallaOk = filtros.talla_elegido ? producto.talla.includes(filtros.talla_elegido)  : true;
+        const colorOk = filtros.color_elegido ? producto.color === filtros.color_elegido : true;
+        const precioOk = producto.precio >= Number(filtros.precio_min) && producto.precio <= Number(filtros.precio_max);
+        
+        return marcaOk && tallaOk && colorOk && precioOk;
+    });
+
+    return(
+        <>
+            <h3>Productos encontrados: {filtrados.length}</h3>
+            {filtrados.map((filt)=>{
+                return <TarjetaProductos key={filt.id} producto = {filt}/>
+            })}
+        </>
+    )
 }
