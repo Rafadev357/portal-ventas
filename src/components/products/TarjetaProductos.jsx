@@ -17,6 +17,7 @@ export const TarjetaProductos = ({producto}) => {
                 <li>{producto.categoria}</li>
                 <li>{producto.marca}</li>
                 <li>{producto.modelo}</li>
+                <li>{producto.precio} €</li>
                 <li>{producto.color}</li>
             </ul>
             </div>
