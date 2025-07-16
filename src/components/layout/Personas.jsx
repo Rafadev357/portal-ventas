@@ -18,86 +18,81 @@ export const Personas = () => {
          * Aquí lo utilizamos para enviar al usuario a otra página si falta el estado necesario.
          */
         const navigate = useNavigate();
-        const {persona} = location.state || {};
-        const {categoria} = location.state || {};
+        const {persona, categoria} = location.state || {};
         const [filtros, setFiltros] = useState(null);
+        const [criterio, setCriterio] = useState({persona, categoria});
 
         /**
          * Con useEffect validamos si el valor de `persona` está definido.
          * Si no lo está, redirigimos al usuario a la página de inicio.
          */
-        useEffect(()=>{
+
+        /*useEffect(()=>{
             if(!persona){
                 console.warn('persona es undefined. Redirigiendo...');
                 navigate('/error', {replace: true}); //`replace: true` evita que el usuario pueda volver atrás a la ruta inválida
             }
-        }, [persona, navigate]);
+        }, [persona, navigate]);*/
+
+
+        /**
+         * Este useEffect se ejecutará cuando cambie la navegación
+         */
+
+        useEffect(()=>{
+            if(!location.state){
+                console.warn('persona es undefined. Redirigiendo...');
+                navigate('/error', {replace: true}); //`replace: true` evita que el usuario pueda volver atrás a la ruta inválida
+            }else{
+                setCriterio({
+                    persona: location.state.persona,
+                    categoria: location.state.categoria
+                });
+                setFiltros(null); //Se resetean los filtros al cambiar la fuente
+            }
+        }, [location.state]);
+
+
 
         //Esta función se encarga de actualizar el estado de la variable filtros con los datos del formulario
         const manejarFiltros = (data)=>{
             setFiltros(data);
         };
-        console.log('Estos son los filtros recogidos del componente FiltroProductos: ', filtros);
-        console.log('Se está renderizando ProductosFiltrados');
 
-        if(persona && !categoria && filtros){
+        const productoBase = Productos.filter((producto)=>
+            criterio.persona ? producto.persona.includes(criterio.persona) : true
+        );
 
-            return <ProductosFiltrados productos={Productos} filtros={filtros}/>
-
-        }else if(persona && !categoria){
-            // Filtrar los productos según la propiedad persona recibida
-                const productosFiltrados = Productos.filter(
-                    (producto)=> persona && producto.persona.includes(persona)
-                );
-
-                // En caso de no haber producto se muestra un mensaje informativo
-                if(productosFiltrados.length === 0){
-                    return <p>No se encontraron productos para {persona}</p>
-                }
-                console.log(persona);
-            
+        const productosCategoria = criterio.categoria
+            ? productoBase.filter((producto)=> producto.categoria.includes(criterio.categoria.toLowerCase())) :
+            productoBase;
         
-            return (
-                <>
-                    <aside className='content__sidebar'>
-                        <FiltroProductos onFiltrar={manejarFiltros}/>
-                    </aside>
-                    <div className='content__products'>
-                        {productosFiltrados.map(producto =>{
-                            return <TarjetaProductos key={producto.id} producto={producto}/>
-                        })}
-                    </div>
-                    <aside className='content__sidebar'>anuncios</aside>
-                </>
+        const productosFinales = filtros ?
+            productosCategoria.filter((producto)=>{
+                const marcaOk = filtros.marca ? producto.marca === filtros.marca : true;
+                const tallaOk = filtros.talla_elegido ? producto.talla.includes(filtros.talla_elegido)  : true;
+                const colorOk = filtros.color_elegido ? producto.color.includes(filtros.color_elegido) : true;
+                const precioOk = producto.precio >= Number(filtros.precio_min) && producto.precio <= Number(filtros.precio_max);
                 
-            )
-        }else{
-            const cat_minusculas = categoria.toLowerCase();
-            console.log(cat_minusculas);
-            const productosFiltrados = Productos.filter(
-                (producto)=>{
-                    const filtrado_personas = producto.persona.includes(persona); 
-                    const filtrado_categoria = producto.categoria.includes(cat_minusculas);
-                    return filtrado_categoria && filtrado_personas;
-                }
-            );
-
-            if(productosFiltrados.length === 0){
-                return <p>No se encontraron productos para {persona} y {categoria}</p>
-            }
-
-            return(
-                <>
-                    <aside className='content__sidebar'>
-                        <FiltroProductos onFiltrar={manejarFiltros}/>
-                    </aside>
-                    <div className='content__products'>
-                        {productosFiltrados.map(producto =>{
-                            return <TarjetaProductos key={producto.id} producto = {producto}/>
-                        })}
-                    </div>
-                    <aside className='content__sidebar'>anuncios</aside>
-                </>
-            )
-        }
+                return marcaOk && tallaOk && colorOk && precioOk;
+            }) :
+            productosCategoria;
+        
+        return(
+            <>
+                <aside className='content__sidebar'>
+                    <FiltroProductos onFiltrar={manejarFiltros}/>
+                </aside>
+                <div className="content__products">
+                    {productosFinales.length === 0 ? 
+                        (<p>No se encontraron productos.</p>) : (
+                            productosFinales.map(producto =>(
+                                <TarjetaProductos key={producto.id} producto={producto}/>
+                            ))
+                        )
+                    }
+                </div>
+                <aside className="content__sidebar">anuncios</aside>
+            </>
+        )
 }
