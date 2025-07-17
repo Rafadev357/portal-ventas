@@ -38,6 +38,8 @@ export const LayoutProduct = () => {
           </div>
           <div>
             <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>
+            <button>Guardar en favoritos</button>
+            <button>Comprar</button>
           </div>
         </section>
       </main> 

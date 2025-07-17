@@ -3,7 +3,6 @@ import { Productos } from '../products/Productos';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TarjetaProductos } from '../products/TarjetaProductos';
 import { FiltroProductos } from '../forms/FiltroProductos';
-import { ProductosFiltrados } from '../products/ProductosFiltrados';
 
 export const Personas = () => {
         /**
