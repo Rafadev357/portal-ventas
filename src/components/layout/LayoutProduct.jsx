@@ -2,6 +2,6 @@ import React from 'react'
 
 export const LayoutProduct = () => {
   return (
-    <div>LayoutProduct</div>
+    <div>Esta es la página del producto seleccionado</div>
   )
 }

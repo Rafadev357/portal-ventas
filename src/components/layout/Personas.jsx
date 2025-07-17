@@ -80,9 +80,9 @@ export const Personas = () => {
         
         return(
             <>
-                <aside className='content__sidebar'>
+                <section className='content__sidebar'>
                     <FiltroProductos onFiltrar={manejarFiltros}/>
-                </aside>
+                </section>
                 <div className="content__products">
                     {productosFinales.length === 0 ? 
                         (<p>No se encontraron productos.</p>) : (

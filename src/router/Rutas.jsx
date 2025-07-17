@@ -5,6 +5,7 @@ import { Inicio } from '../components/layout/Inicio';
 import { Rebajas } from '../components/layout/Rebajas';
 import { NotFound } from '../components/layout/NotFound';
 import { Personas } from '../components/layout/Personas';
+import { LayoutProduct } from '../components/layout/LayoutProduct';
 
 export const Rutas = () => {
   return (
@@ -22,6 +23,7 @@ export const Rutas = () => {
             <Route path='/rebajas' element={<Rebajas/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
+            <Route path='/producto' element={<LayoutProduct/>}/>
         </Routes>
         
         
