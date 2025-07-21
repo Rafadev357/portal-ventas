@@ -28,6 +28,7 @@ export const LayoutProduct = () => {
     let {id, marca, modelo, color, talla, precio} = producto;
     console.log('Voy a comprar este producto: ', marca, modelo, color, precio, talla);*/
     const objetoCopia = {...producto};
+    objetoCopia.talla = tallaElegida;
     console.log('Esta es la copia de producto: ',objetoCopia);
   };
 
