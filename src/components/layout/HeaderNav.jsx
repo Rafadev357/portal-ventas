@@ -28,7 +28,7 @@ export const HeaderNav = () => {
 
     const onMouseLeave = ()=> {
         timeoutRef.current = setTimeout(()=>{setEnter(null);
-        console.log('Al quitar el puntero el estado de enter ha cambiado a: ' + enter);}, 3000);
+        console.log('Al quitar el puntero el estado de enter ha cambiado a: ' + enter);}, 2000);
     };
 
     const onMouseEnter = (tipo)=> {

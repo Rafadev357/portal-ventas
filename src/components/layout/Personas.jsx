@@ -24,17 +24,6 @@ export const Personas = () => {
         /**
          * Con useEffect validamos si el valor de `persona` está definido.
          * Si no lo está, redirigimos al usuario a la página de inicio.
-         */
-
-        /*useEffect(()=>{
-            if(!persona){
-                console.warn('persona es undefined. Redirigiendo...');
-                navigate('/error', {replace: true}); //`replace: true` evita que el usuario pueda volver atrás a la ruta inválida
-            }
-        }, [persona, navigate]);*/
-
-
-        /**
          * Este useEffect se ejecutará cuando cambie la navegación
          */
 
