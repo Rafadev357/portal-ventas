@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Productos } from '../products/Productos';
 
 export const LayoutProduct = () => {
+  const {id} = useParams();
+  const [tallaElegida, setTalla] = useState(null);
+
+  const producto = Productos.find(p => p.id === parseInt(id));
+  
+
+  const elegirTalla = (e)=>{
+    setTalla(e.target.value);
+  };
+
+  const tallas = producto.talla.map((t, i) =><li key={i}><button onClick={elegirTalla} value={t}>{t}</button></li>);
+
+  const guardarProducto = (id , marca)=>{
+    localStorage.setItem(id, marca);
+  };
+
+  const comprarProducto = ()=>{
+    console.log('Voy a comprar este producto');
+  };
+
   return (
     <div className='layout__product'>
       <main className='layout__content'>
         <section className='layout information'>
-          <div className='layout__img'>imagen</div>
+          <div className='layout__img'>
+            <img src={producto.url} alt={producto.alt} width='150px' height='150px'/>
+          </div>
           <div className='layout__desc'>
-            <h3>Descripción producto</h3>
+            <h2>Descripción de las {producto.marca} {producto.modelo}</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec augue feugiat, porta ex at, 
                 bibendum tortor. Integer eleifend mattis mauris sed tempor. Duis ac quam aliquet, facilisis ex non, sodales turpis. 
@@ -33,13 +57,13 @@ export const LayoutProduct = () => {
         </section>
         <section className='layout function'>
           <div>
-            <ul></ul>
-            <span>Precio</span>
+            <ul>{tallas}</ul>
+            <span>{producto.precio}€</span>
           </div>
           <div>
             <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>
-            <button>Guardar en favoritos</button>
-            <button>Comprar</button>
+            <button onClick={()=> guardarProducto(producto.id, producto.marca)}>Guardar en favoritos</button>
+            <button onClick={comprarProducto}>Comprar</button>
           </div>
         </section>
       </main> 

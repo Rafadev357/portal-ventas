@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 /**
  * Componente Tarjeta productos.
@@ -10,9 +10,7 @@ import { NavLink } from 'react-router-dom';
 
 export const TarjetaProductos = ({producto}) => {
   return (
-    <NavLink to='/producto'>
-        <div key={producto.id} className='product'>
-            
+        <NavLink to={`/producto/${producto.id}`} key={producto.id} className='product'>
             <img src={producto.url} alt={producto.alt} width='150px' height='150px'/>
             <div>
             <h3>Descripción producto</h3>
@@ -25,8 +23,6 @@ export const TarjetaProductos = ({producto}) => {
             </ul>
             </div>
             <span>{producto.talla.join(', ')}</span>
-            
-        </div>
-    </NavLink>
+        </NavLink>
         )
 }

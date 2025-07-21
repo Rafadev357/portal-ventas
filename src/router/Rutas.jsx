@@ -23,7 +23,7 @@ export const Rutas = () => {
             <Route path='/rebajas' element={<Rebajas/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
-            <Route path='/producto' element={<LayoutProduct/>}/>
+            <Route path='/producto/:id' element={<LayoutProduct/>}/>
         </Routes>
         
         
