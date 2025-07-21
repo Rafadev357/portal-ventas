@@ -5,6 +5,8 @@ import { Productos } from '../products/Productos';
 export const LayoutProduct = () => {
   const {id} = useParams();
   const [tallaElegida, setTalla] = useState(null);
+  const [compraProduct, setCompra] = useState({});
+  const guardados = [];
 
   const producto = Productos.find(p => p.id === parseInt(id));
   
@@ -15,12 +17,18 @@ export const LayoutProduct = () => {
 
   const tallas = producto.talla.map((t, i) =><li key={i}><button onClick={elegirTalla} value={t}>{t}</button></li>);
 
-  const guardarProducto = (id , marca)=>{
-    localStorage.setItem(id, marca);
+  const guardarProducto = (producto)=>{
+    producto.talla = tallaElegida
+    guardados.push(JSON.stringify(producto));
+    localStorage.setItem('Productos', guardados);
   };
 
-  const comprarProducto = ()=>{
-    console.log('Voy a comprar este producto');
+  const comprarProducto = (producto)=>{
+    /*producto.talla = tallaElegida;
+    let {id, marca, modelo, color, talla, precio} = producto;
+    console.log('Voy a comprar este producto: ', marca, modelo, color, precio, talla);*/
+    const objetoCopia = {...producto};
+    console.log('Esta es la copia de producto: ',objetoCopia);
   };
 
   return (
@@ -62,8 +70,8 @@ export const LayoutProduct = () => {
           </div>
           <div>
             <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>
-            <button onClick={()=> guardarProducto(producto.id, producto.marca)}>Guardar en favoritos</button>
-            <button onClick={comprarProducto}>Comprar</button>
+            <button onClick={()=> guardarProducto(producto)}>Guardar en favoritos</button>
+            <button onClick={()=>comprarProducto(producto)}>Comprar</button>
           </div>
         </section>
       </main> 
