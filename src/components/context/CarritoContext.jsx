@@ -61,9 +61,25 @@ export const CarritoProvider = ({children})=>{
         setCarrito(prev=>prev.filter(producto=>producto.id !== idProducto));
     };
 
+    const aumentarCantidad = (id)=>{
+        setCarrito(prev=>
+            prev.map(p =>
+                p.id === id ? {...p, cantidad: p.cantidad + 1} : p
+            )
+        )
+    };
+
+    const disminuirCantidad = (id)=>{
+        setCarrito(prev=>
+            prev.map(p =>
+                p.id === id && p.cantidad > 1 ? {...p, cantidad: Math.max(p.cantidad - 1, 1)} : p
+            )
+        )
+    };
+
 
     return(
-        <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto }}>
+        <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto, aumentarCantidad, disminuirCantidad }}>
             {children}
         </CarritoContext.Provider>
     );
