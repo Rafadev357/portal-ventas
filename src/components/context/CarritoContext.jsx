@@ -1,5 +1,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
+/**
+ * El componente CarritoContext se encarga de crear un contexto global
+ * que podrá usarse dentro de otros componentes para manejar el estado
+ * del carrito.
+ */
+
 const CarritoContext = createContext();
 
 export const useCarrito = ()=> useContext(CarritoContext);

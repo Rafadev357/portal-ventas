@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Productos } from './Productos';
+import { useCarrito } from '../context/CarritoContext';
 
 export const LayoutProduct = () => {
   const {añadirProducto} = useCarrito();

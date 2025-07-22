@@ -22,7 +22,7 @@ export const Rutas = () => {
             <Route path='/mujer' element={<Personas/>}/>
             <Route path='/niños' element={<Personas/>}/>
             <Route path='/rebajas' element={<Rebajas/>}/>
-            <Route path='/carro/:id' element={<Carrito/>}/>
+            <Route path='/carro' element={<Carrito/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/producto/:id' element={<LayoutProduct/>}/>
