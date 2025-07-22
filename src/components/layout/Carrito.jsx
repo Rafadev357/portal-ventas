@@ -14,7 +14,8 @@ export const Carrito = () => {
         {carrito.length === 0 ? (
             <p>No hay productos en el carro</p>
         ) : (
-            carrito.map((producto, index)=>(
+            <div>
+            {carrito.map((producto, index)=>(
                 <div key={index}>
                     <img src={producto.url} alt={producto.alt} width={100}/>
                     <p>{producto.marca} - {producto.modelo}</p>
@@ -31,11 +32,12 @@ export const Carrito = () => {
                         <img src='/img/iconos/menos.png' alt='simbolo menos' width={20}/>
                     </button>                    
                 </div>
-            ))
-        )}
-        <div>
-            <h3>Total</h3>
-        </div>
+            ))}
+                <div>
+                    <h3>Total</h3>
+                </div>
+            </div>
+        )} 
     </div>
   )
 }

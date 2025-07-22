@@ -57,10 +57,19 @@ export const CarritoProvider = ({children})=>{
         setCarrito(prev=>[...prev, producto]);
     };
 
+    /**
+     * Con eliminarProducto se busca dentro del array de carrito un producto cuyo id no coincida con 
+     * el id pasado por parametro, descartando el que sí coincida
+     */
+
     const eliminarProducto = (idProducto)=>{
         setCarrito(prev=>prev.filter(producto=>producto.id !== idProducto));
     };
 
+    /**
+     * Para aunmentar la cantidad se sigue el mismo procedimiento que en la función anterior
+     * a la hora de buscar en carrito por el id de los productos
+     */
     const aumentarCantidad = (id)=>{
         setCarrito(prev=>
             prev.map(p =>
@@ -69,6 +78,9 @@ export const CarritoProvider = ({children})=>{
         )
     };
 
+    /**
+     * Igual que en el caso anterior con la diferencia de que se añade una condición que impida que cantidad baje de 1
+     */
     const disminuirCantidad = (id)=>{
         setCarrito(prev=>
             prev.map(p =>
@@ -76,6 +88,13 @@ export const CarritoProvider = ({children})=>{
             )
         )
     };
+
+    const PrecioTotal = (id)=>{
+        const [precioTotal, setPrecio] = useState({});
+        carrito.map(p =>
+            p.id === id ? {setPrecio(p.precio)} :
+        )
+    }; 
 
 
     return(
