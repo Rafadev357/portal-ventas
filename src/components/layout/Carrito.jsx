@@ -3,6 +3,7 @@ import { useCarrito } from '../context/CarritoContext'
 
 
 
+
 export const Carrito = () => {
     const {carrito} = useCarrito();
     const {eliminarProducto, aumentarCantidad, disminuirCantidad} = useCarrito();

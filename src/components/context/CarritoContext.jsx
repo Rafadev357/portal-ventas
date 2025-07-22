@@ -90,10 +90,6 @@ export const CarritoProvider = ({children})=>{
     };
 
     const PrecioTotal = (id)=>{
-        const [precioTotal, setPrecio] = useState({});
-        carrito.map(p =>
-            p.id === id ? {setPrecio(p.precio)} :
-        )
     }; 
 
 
