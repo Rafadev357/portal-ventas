@@ -25,7 +25,7 @@ export const Carrito = () => {
                         <img src='/img/iconos/mas.png' alt='simbolo mas' width={20}/>
                     </button>
                     <div>
-                        <span>{Number(producto.cantidad)}</span>
+                        <span>{producto.cantidad}</span>
                     </div>
                     <button onClick={()=>disminuirCantidad(producto.id)}>
                         <img src='/img/iconos/menos.png' alt='simbolo menos' width={20}/>
