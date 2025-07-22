@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Productos } from '../products/Productos';
+import { Productos } from './Productos';
 
 export const LayoutProduct = () => {
   const {id} = useParams();

@@ -5,7 +5,7 @@ import { Inicio } from '../components/layout/Inicio';
 import { Rebajas } from '../components/layout/Rebajas';
 import { NotFound } from '../components/layout/NotFound';
 import { Personas } from '../components/layout/Personas';
-import { LayoutProduct } from '../components/layout/LayoutProduct';
+import { LayoutProduct } from '../components/products/LayoutProduct';
 import { Carrito } from '../components/layout/Carrito';
 
 export const Rutas = () => {
@@ -22,7 +22,7 @@ export const Rutas = () => {
             <Route path='/mujer' element={<Personas/>}/>
             <Route path='/niños' element={<Personas/>}/>
             <Route path='/rebajas' element={<Rebajas/>}/>
-            <Route path='/carro' element={<Carrito/>}/>
+            <Route path='/carro/:id' element={<Carrito/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/producto/:id' element={<LayoutProduct/>}/>
