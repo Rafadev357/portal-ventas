@@ -137,6 +137,9 @@ return (
                 </div>
             </li>
         </ul>
+        <div >
+            <NavLink to='/carro' className='menu__link'>Carro</NavLink>
+        </div>
     </nav>
    </header>
   )
