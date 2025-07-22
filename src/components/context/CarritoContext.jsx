@@ -57,9 +57,13 @@ export const CarritoProvider = ({children})=>{
         setCarrito(prev=>[...prev, producto]);
     };
 
+    const eliminarProducto = (idProducto)=>{
+        setCarrito(prev=>prev.filter(producto=>producto.id !== idProducto));
+    };
+
 
     return(
-        <CarritoContext.Provider value={{ carrito, añadirProducto }}>
+        <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto }}>
             {children}
         </CarritoContext.Provider>
     );
