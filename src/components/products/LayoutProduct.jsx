@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Productos } from './Productos';
 
 export const LayoutProduct = () => {
+  const {añadirProducto} = useCarrito();
   const {id} = useParams();
   const [tallaElegida, setTalla] = useState(null);
   const [compraProduct, setCompra] = useState({});
@@ -27,9 +28,9 @@ export const LayoutProduct = () => {
     /*producto.talla = tallaElegida;
     let {id, marca, modelo, color, talla, precio} = producto;
     console.log('Voy a comprar este producto: ', marca, modelo, color, precio, talla);*/
-    const objetoCopia = {...producto};
-    objetoCopia.talla = tallaElegida;
-    console.log('Esta es la copia de producto: ',objetoCopia);
+    const objetoCompra = {...producto, talla: tallaElegida};
+    console.log('Esta es la copia de producto: ',objetoCompra);
+    añadirProducto(objetoCompra);
   };
 
   return (
