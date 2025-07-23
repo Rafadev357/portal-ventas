@@ -6,7 +6,7 @@ import { useCarrito } from '../context/CarritoContext'
 
 export const Carrito = () => {
     const {carrito} = useCarrito();
-    const {eliminarProducto, aumentarCantidad, disminuirCantidad} = useCarrito();
+    const {eliminarProducto, aumentarCantidad, disminuirCantidad, precioTotal } = useCarrito();
 
     
   return (
@@ -36,6 +36,7 @@ export const Carrito = () => {
             ))}
                 <div>
                     <h3>Total</h3>
+                    <span>{precioTotal}</span>
                 </div>
             </div>
         )} 

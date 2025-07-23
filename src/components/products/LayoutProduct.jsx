@@ -35,12 +35,11 @@ export const LayoutProduct = () => {
   };
 
   return (
-    <div className='layout__product'>
-      <main className='layout__content'>
-        <section className='layout information'>
-          <div className='layout__img'>
-            <img src={producto.url} alt={producto.alt} width='150px' height='150px'/>
-          </div>
+    <>
+      <main className='layout__product'>
+        <section className='layout__information'>
+          <img src={producto.url} alt={producto.alt} width='150px' height='150px'/>
+          
           <div className='layout__desc'>
             <h2>Descripción de las {producto.marca} {producto.modelo}</h2>
             <p>
@@ -79,6 +78,6 @@ export const LayoutProduct = () => {
         </section>
       </main> 
       <aside></aside>
-    </div>
+    </>
   )
 }

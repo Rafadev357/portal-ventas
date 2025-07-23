@@ -38,6 +38,9 @@ export const CarritoProvider = ({children})=>{
     });
 
 
+    const [precioTotal, setPrecioTotal] = useState(0);
+
+
     /**
      * Con useEffect lo que se hace es que cada vez que cambie el estado
      * carrito se actualiza el localStorage, de manera que si se recarga la
@@ -89,12 +92,20 @@ export const CarritoProvider = ({children})=>{
         )
     };
 
-    const PrecioTotal = (id)=>{
-    }; 
+    let precioCalculado = 0;
 
+    useEffect(()=>{
+        if(carrito.length > 0){
+            const total = carrito.reduce((acumulador, producto)=> acumulador + producto.precio, 0);
+            setPrecioTotal(total);
+        }else{
+            setPrecioTotal(0);
+        }
+    }, [carrito]);
 
+    console.log(precioCalculado);
     return(
-        <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto, aumentarCantidad, disminuirCantidad }}>
+        <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto, aumentarCantidad, disminuirCantidad, precioTotal }}>
             {children}
         </CarritoContext.Provider>
     );
