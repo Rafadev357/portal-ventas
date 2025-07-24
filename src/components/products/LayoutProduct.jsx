@@ -25,10 +25,6 @@ export const LayoutProduct = () => {
   };
 
   const comprarProducto = (producto)=>{
-    if (!tallaElegida) {
-      alert('Por favor, selecciona una talla antes de comprar.');
-      return;
-    }
     const objetoCompra = {...producto, talla: tallaElegida, cantidad: 1};
     console.log('Esta es la copia de producto: ',objetoCompra);
     añadirProducto(objetoCompra);
