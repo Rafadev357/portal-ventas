@@ -65,10 +65,10 @@ export const LayoutProduct = () => {
             </p>
           </div>
         </section>
-        <section className='layout function'>
-          <div>
+        <section className='layout__function'>
+          <div className='layout__function-info'>
             <ul>{tallas}</ul>
-            <span>{producto.precio}€</span>
+            <p>Precio: <span>{producto.precio}€</span></p>
           </div>
           <div>
             <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>

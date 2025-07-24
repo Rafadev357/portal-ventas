@@ -163,3 +163,27 @@ body{
     font-size: 16px;
     text-align: justify;
 }
+
+.layout__function{
+    width: 80%;
+    height: min-content;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.layout__function-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.layout__function-info ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1rem;
+}
