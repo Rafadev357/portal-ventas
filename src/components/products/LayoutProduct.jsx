@@ -25,9 +25,10 @@ export const LayoutProduct = () => {
   };
 
   const comprarProducto = (producto)=>{
-    /*producto.talla = tallaElegida;
-    let {id, marca, modelo, color, talla, precio} = producto;
-    console.log('Voy a comprar este producto: ', marca, modelo, color, precio, talla);*/
+    if (!tallaElegida) {
+      alert('Por favor, selecciona una talla antes de comprar.');
+      return;
+    }
     const objetoCompra = {...producto, talla: tallaElegida, cantidad: 1};
     console.log('Esta es la copia de producto: ',objetoCompra);
     añadirProducto(objetoCompra);
@@ -70,7 +71,6 @@ export const LayoutProduct = () => {
             <p>Precio: <span>{producto.precio}€</span></p>
           </div>
           <div className='layout__function-buttons'>
-            <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>
             <button onClick={()=> guardarProducto(producto)}>Guardar en favoritos</button>
             <button onClick={()=>comprarProducto(producto)}>Comprar</button>
           </div>

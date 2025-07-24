@@ -170,11 +170,12 @@ body{
     border: 1px solid blue;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .layout__function-info{
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,4 +218,29 @@ body{
     font-weight: bold;
 }
 
-.l
+.layout__function-buttons{
+    border: 1px solid black;
+    width: 30%;
+    height: min-content;
+    margin-right: 190px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.layout__function-buttons button{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #167cc0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.layout__function-buttons button:hover{
+    background-color: #0f5a8a;
+}
