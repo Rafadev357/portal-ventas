@@ -7,7 +7,6 @@ export const LayoutProduct = () => {
   const {añadirProducto} = useCarrito();
   const {id} = useParams();
   const [tallaElegida, setTalla] = useState(null);
-  const [compraProduct, setCompra] = useState({});
   const guardados = [];
 
   const producto = Productos.find(p => p.id === parseInt(id));
