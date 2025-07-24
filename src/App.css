@@ -187,3 +187,34 @@ body{
     list-style: none;
     gap: 1rem;
 }
+
+.layout__function-info ul li{
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.layout__function-info ul li:hover{
+    background-color: #d0d3d4;
+}
+
+.layout__function-info ul li button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1c7a99;
+    font-weight: bold;
+}
+
+.layout__function-info ul li button:hover{
+    color: blue;
+}
+
+.layout__function-info p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.l

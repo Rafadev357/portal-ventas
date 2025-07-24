@@ -69,7 +69,7 @@ export const LayoutProduct = () => {
             <ul>{tallas}</ul>
             <p>Precio: <span>{producto.precio}€</span></p>
           </div>
-          <div>
+          <div className='layout__function-buttons'>
             <p>Aquí va el botón de añadir al carro y el botón de guardar en favoritos</p>
             <button onClick={()=> guardarProducto(producto)}>Guardar en favoritos</button>
             <button onClick={()=>comprarProducto(producto)}>Comprar</button>
