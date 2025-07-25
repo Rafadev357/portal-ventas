@@ -518,8 +518,28 @@ body{
     justify-content: center;
     padding: 2rem;
     background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.layout__inicio h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.layout__inicio p{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.layout__aleatorio{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
     position: relative;
 }
