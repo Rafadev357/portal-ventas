@@ -52,7 +52,7 @@ export const FiltroProductos = ({onFiltrar}) => {
             </label>
             <label htmlFor="precio">
                 Rango de precios:
-                <span>{min} - </span><span>{max}</span>
+                <span> {min} - </span><span>{max}</span>
                 <input type="range" name="precio_min" id="precio_min"
                     min={minPrecio}
                     max={maxPrecio}
@@ -109,8 +109,10 @@ export const FiltroProductos = ({onFiltrar}) => {
                     <option value="blanco">Blanco</option>
                 </select>
             </label>
-            <button type='reset'>Reiniciar</button>
-            <button type='submit'>Filtrar</button>
+            <div className="form__button">
+                <button type='reset'>Reiniciar</button>
+                <button type='submit'>Filtrar</button>
+            </div>
         </form>
     </>
   )

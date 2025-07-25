@@ -97,7 +97,7 @@ return (
                 <NavLink to='/inicio' className='menu__link'>Inicio</NavLink>
             </li>
             <li>
-                <div onMouseEnter={()=>onMouseEnter('hombre')} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                <div onMouseEnter={()=>onMouseEnter('hombre')} onMouseLeave={onMouseLeave} className='content__menulink'>
                         <NavLink to='/hombre' state={{persona: 'hombre'}} className='menu__link'>Hombre</NavLink>
                     
                         {enter == 'hombre' && <div className='submenu'>
@@ -109,7 +109,7 @@ return (
                 
             </li>
             <li>
-                <div onMouseEnter={()=>onMouseEnter('mujer')} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                <div onMouseEnter={()=>onMouseEnter('mujer')} onMouseLeave={onMouseLeave} className='content__menulink'>
                     <NavLink to='/mujer' state={{persona: 'mujer'}} className='menu__link'>Mujer</NavLink>
                     
                         {enter == 'mujer' && <div className='submenu'>
@@ -120,7 +120,7 @@ return (
                 </div>
             </li>
             <li>
-                <div onMouseEnter={()=>onMouseEnter('niños')} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                <div onMouseEnter={()=>onMouseEnter('niños')} onMouseLeave={onMouseLeave} className='content__menulink'>
                         <NavLink to='/niños' state={{persona: 'niños'}} className='menu__link'>Niños</NavLink>
                             {enter == 'niños' && <div className='submenu'>
                             <MostrarSubmenu submenu = {subMenu} persona = 'niños'/>
@@ -128,7 +128,7 @@ return (
                 </div>
             </li>
             <li>
-                <div onMouseEnter={()=>onMouseEnter('rebajas')} onMouseLeave={onMouseLeave} style={{position: 'relative'}}>
+                <div onMouseEnter={()=>onMouseEnter('rebajas')} onMouseLeave={onMouseLeave} className='content__menulink'>
                     <NavLink to='/rebajas' className='menu__link'>Rebajas</NavLink>
                         {enter == 'rebajas' && <div className='submenu'>
                             <MostrarSubmenu submenu = {subMenuRebajas}/>
@@ -136,10 +136,13 @@ return (
                         }
                 </div>
             </li>
+            <li>
+                <div className='content__menulink'>
+                    <NavLink to='/carro' className='menu__link'>Carro</NavLink>
+                </div>
+            </li>
         </ul>
-        <div >
-            <NavLink to='/carro' className='menu__link'>Carro</NavLink>
-        </div>
+        
     </nav>
    </header>
   )
