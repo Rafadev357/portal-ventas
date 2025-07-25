@@ -499,6 +499,28 @@ body{
     color: #c82333;
 }
 
+.layout__comprar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.layout__comprar button{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.layout__comprar button:hover{
+    background-color: #218838;
+}
+
 .layout__carrito__total{
     font-size: 1.5rem;
     font-weight: bold;

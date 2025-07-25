@@ -6,6 +6,7 @@ import { NotFound } from '../components/layout/NotFound';
 import { Personas } from '../components/layout/Personas';
 import { LayoutProduct } from '../components/products/LayoutProduct';
 import { Carrito } from '../components/layout/Carrito';
+import { PasarelaPago } from '../components/layout/PasarelaPago';
 
 export const Rutas = () => {
   return (
@@ -21,6 +22,7 @@ export const Rutas = () => {
             <Route path='/mujer' element={<Personas/>}/>
             <Route path='/niños' element={<Personas/>}/>
             <Route path='/carro' element={<Carrito/>}/>
+            <Route path='/pasarelapago' element={<PasarelaPago/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/producto/:id' element={<LayoutProduct/>}/>

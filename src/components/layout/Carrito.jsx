@@ -1,5 +1,6 @@
 import React from 'react'
 import { useCarrito } from '../context/CarritoContext'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -7,7 +8,15 @@ import { useCarrito } from '../context/CarritoContext'
 export const Carrito = () => {
     const {carrito} = useCarrito();
     const {eliminarProducto, aumentarCantidad, disminuirCantidad, precioTotal } = useCarrito();
+    const navigate = useNavigate();
 
+    const comprarProductos = () => {
+        if(carrito.length === 0){
+            alert('No hay productos en el carro para comprar');
+        }else{
+            navigate('/pasarelapago');
+        }
+    };
     
   return (
     <div className='layout__carrito'>
@@ -34,9 +43,12 @@ export const Carrito = () => {
                     </button>                    
                 </div>
             ))}
-                <div className='layout__carrito__total'>
-                    <h3>Total:</h3>
-                    <span>{precioTotal}€</span>
+                <div className="layout__comprar">
+                    <div className='layout__carrito__total'>
+                        <h3>Total:</h3>
+                        <span>{precioTotal}€</span>
+                    </div>
+                        <button onClick={comprarProductos}>Comprar</button>
                 </div>
             </div>
         )} 
