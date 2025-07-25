@@ -25,6 +25,8 @@ const ProductosAleatorios = () => {
         }
     }
 
+    // Al porner el return fuera del bucle, aseguramos que se renderice una vez que se hayan seleccionado los productos aleatorios.
+    // Esto es importante para evitar múltiples renders innecesarios.
     return (
       <div className="layout__aleatorio">
         {productosAleatorios.map(producto => (
@@ -43,8 +45,22 @@ export const Inicio = () => {
   return (
     <div className='layout__inicio'>
         <h1>Bienvenido a TodoSport</h1>
-        <p>Tu tienda de deportes en línea</p>
-        <p>Explora nuestras categorías: Hombre, Mujer, Niños y Rebajas.</p>
+        <div className="content__descripction">
+          <p>En TodoSport, creemos que cada paso cuenta. 
+            Somos tu nueva tienda online dedicada a ofrecerte la más amplia selección de zapatillas de deporte, 
+            diseñadas para llevar tu rendimiento y estilo al siguiente nivel. Ya seas un atleta profesional, 
+            un entusiasta del fitness o simplemente busques la comodidad perfecta para tu día a día, 
+            aquí encontrarás ese par ideal que se adapta a cada una de tus necesidades.
+          </p>
+
+          <p>Explora nuestro catálogo cuidadosamente seleccionado con las últimas tendencias y tecnologías de las 
+            marcas líderes. Desde modelos de alto rendimiento para running y entrenamiento, hasta las zapatillas 
+            más icónicas para tu estilo urbano, en TodoSport la calidad, la comodidad y el diseño se unen en cada producto.
+          </p>
+
+          <p>Prepárate para equipar tus pies con lo mejor y alcanzar tus metas. ¡Tu aventura comienza aquí, en TodoSport!</p>
+        </div>
+        <h2>Productos destacados</h2>
         <div>
           <ProductosAleatorios/>
         </div>

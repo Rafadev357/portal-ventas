@@ -52,27 +52,6 @@ export const HeaderNav = () => {
             categoria: 'Running'
         }
     ];
-
-
-    /**
-     * El objeto subMenuRebajas será el que se renderice en la lista
-     * cuando rebajas se pase como props a MostrarSbumenu
-     */
-
-    const subMenuRebajas = [
-        {
-            id: 0,
-            categoria: '30% de descuento'
-        },
-        {
-            id: 1,
-            categoria: '50% de descuento'
-        },
-        {
-            id: 2,
-            categoria: '70% de descuento'
-        }
-    ];
     
 
 return (
@@ -116,15 +95,6 @@ return (
                             {enter == 'niños' && <div className='submenu'>
                             <MostrarSubmenu submenu = {subMenu} persona = 'niños'/>
                         </div>}
-                </div>
-            </li>
-            <li>
-                <div onMouseEnter={()=>onMouseEnter('rebajas')} onMouseLeave={onMouseLeave} className='content__menulink'>
-                    <NavLink to='/rebajas' className='menu__link'>Rebajas</NavLink>
-                        {enter == 'rebajas' && <div className='submenu'>
-                            <MostrarSubmenu submenu = {subMenuRebajas}/>
-                        </div>
-                        }
                 </div>
             </li>
             <li>

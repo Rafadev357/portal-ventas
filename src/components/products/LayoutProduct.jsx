@@ -63,12 +63,13 @@ export const LayoutProduct = () => {
         </section>
         <section className='layout__function'>
           <div className='layout__function-info'>
+            <p>Elige tu talla</p>
             <ul>{tallas}</ul>
             <p>Precio: <span>{producto.precio}€</span></p>
           </div>
           <div className='layout__function-buttons'>
             <button onClick={()=> guardarProducto(producto)}>Guardar en favoritos</button>
-            <button onClick={()=>comprarProducto(producto)}>Comprar</button>
+            <button onClick={()=>comprarProducto(producto)}>Añadir al carro</button>
           </div>
         </section>
       </main> 

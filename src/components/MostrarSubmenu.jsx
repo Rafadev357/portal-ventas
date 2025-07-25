@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 /**
  * 
@@ -11,7 +11,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 export const MostrarSubmenu = ({submenu, persona}) => {
 
     const navigate = useNavigate();
-    const location = useLocation();
     //const {persona} = location.state || {};
         return (
             <ul className='submenu__list'>

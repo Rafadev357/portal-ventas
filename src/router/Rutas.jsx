@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import { HeaderNav } from '../components/layout/HeaderNav';
 import { Inicio } from '../components/layout/Inicio';
-import { Rebajas } from '../components/layout/Rebajas';
 import { NotFound } from '../components/layout/NotFound';
 import { Personas } from '../components/layout/Personas';
 import { LayoutProduct } from '../components/products/LayoutProduct';
@@ -21,7 +20,6 @@ export const Rutas = () => {
             <Route path='/hombre' element={<Personas/>}/>
             <Route path='/mujer' element={<Personas/>}/>
             <Route path='/niños' element={<Personas/>}/>
-            <Route path='/rebajas' element={<Rebajas/>}/>
             <Route path='/carro' element={<Carrito/>}/>
             <Route path='/error' element={<NotFound/>}/>
             <Route path='*' element={<NotFound/>}/>
