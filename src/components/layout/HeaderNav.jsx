@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { MostrarSubmenu } from '../MostrarSubmenu';
+import logotipo from '../../assets/logotipo/logotipo.png';
 
 
 export const HeaderNav = () => {
@@ -17,14 +18,7 @@ export const HeaderNav = () => {
     //useRef para referenciar un valor
     const timeoutRef = useRef(null);
 
-    /**
-     * Constantes personas y rebajas se utilizarán pasandolas
-     * como props al componente MostrarSubmenu y en función de cual
-     * se mande se renderizará un listado u otro
-     */
     
-    const personas = 'personas';
-    const rebajas = 'rebajas';
 
     const onMouseLeave = ()=> {
         timeoutRef.current = setTimeout(()=>{setEnter(null);
@@ -37,10 +31,7 @@ export const HeaderNav = () => {
         console.log('El estado de enter ha cambiado a: '+ enter);
     };
 
-    // Esta función impide que el submenú desaparezca antes de que tenga lugar el evento click del botón
-    const bloquearSubmenu = ()=>{
-        setLocked(true);
-    };
+    
 
     /**
      * El objeto subMenu será el que se renderice en la lista
@@ -87,7 +78,7 @@ export const HeaderNav = () => {
 return (
    <header className="content__header">
     <div className="content__logo">
-        <span className='logo'></span>
+        <NavLink to='/inicio' className='logo'><img src={logotipo} alt="Logo" width={100} height={100} /></NavLink>
         <h1>Todo Sport</h1>
     </div>
 
