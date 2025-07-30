@@ -57,7 +57,18 @@ export const CarritoProvider = ({children})=>{
      * nuevo con spread operator 
      */
     const añadirProducto = (producto)=>{
-        setCarrito(prev=>[...prev, producto]);
+        setCarrito(prev=>{
+            // Comprueba si el producto ya está en el carrito
+            const existe = prev.find(p => p.id === producto.id);
+            if(existe){
+                // Si ya existe, aumenta la cantidad
+                return prev.map(p => 
+                    p.id === producto.id ? {...p, cantidad: p.cantidad + 1} : p
+                );
+            }
+            // Si no existe, añade el nuevo producto con cantidad 1
+            return [...prev, {...producto, cantidad: 1}];
+        });
     };
 
     /**
@@ -92,18 +103,18 @@ export const CarritoProvider = ({children})=>{
         )
     };
 
-    let precioCalculado = 0;
+    
 
     useEffect(()=>{
         if(carrito.length > 0){
-            const total = carrito.reduce((acumulador, producto)=> acumulador + producto.precio, 0);
+            const total = carrito.reduce((acumulador, producto)=> acumulador + (producto.precio * producto.cantidad), 0);
             setPrecioTotal(total);
         }else{
             setPrecioTotal(0);
         }
     }, [carrito]);
 
-    console.log(precioCalculado);
+   
     return(
         <CarritoContext.Provider value={{ carrito, añadirProducto, eliminarProducto, aumentarCantidad, disminuirCantidad, precioTotal }}>
             {children}

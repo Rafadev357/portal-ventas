@@ -549,6 +549,7 @@ body{
 .layout__inicio h2{
     font-size: 1.5rem;
     margin: 1rem 0;
+    text-decoration: underline;
 }
 
 .layout__inicio p{
@@ -568,8 +569,8 @@ body{
     position: relative;
 }
 
-.content__description{
-    width: 100%;
+.content__descripction{
+    width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -578,8 +579,9 @@ body{
     padding: 2rem;
     background-color: #f8f9fa;
     position: relative;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 10px;
+    gap: 1rem;
 }
 
 .layout__pasarela-pago{

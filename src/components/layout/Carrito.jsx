@@ -6,8 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 export const Carrito = () => {
-    const {carrito} = useCarrito();
-    const {eliminarProducto, aumentarCantidad, disminuirCantidad, precioTotal } = useCarrito();
+    const { carrito, eliminarProducto, añadirProducto, disminuirCantidad, precioTotal } = useCarrito();
     const navigate = useNavigate();
 
     const comprarProductos = () => {
@@ -25,14 +24,14 @@ export const Carrito = () => {
             <p>No hay productos en el carro</p>
         ) : (
             <div className='layout__carrito__productos'>
-            {carrito.map((producto, index)=>(
-                <div key={index} className='layout__carrito__producto'>
+            {carrito.map((producto)=>(
+                <div key={producto.id} className='layout__carrito__producto'>
                     <img src={producto.url} alt={producto.alt} width={100}/>
                     <p>{producto.marca} - {producto.modelo}</p>
                     <p>Talla: {producto.talla}</p>
                     <p>Precio: {producto.precio}</p>
                     <button onClick={()=>eliminarProducto(producto.id)}>Eliminar</button>
-                    <button onClick={()=>aumentarCantidad(producto.id)}>
+                    <button onClick={()=>añadirProducto(producto)}>
                         <img src='/img/iconos/mas.png' alt='simbolo mas' width={20}/>
                     </button>
                     <div className='layout__carrito__cantidad'>
