@@ -3,6 +3,7 @@ import { Productos } from '../products/Productos';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TarjetaProductos } from '../products/TarjetaProductos';
 import { FiltroProductos } from '../forms/FiltroProductos';
+import { Peticiones } from '../Peticiones';
 
 export const Personas = () => {
         /**
@@ -80,7 +81,9 @@ export const Personas = () => {
                         )
                     }
                 </div>
-                <aside className="content__sidebar">anuncios</aside>
+                <aside className="content__sidebar">
+                    <Peticiones/>
+                </aside>
             </>
         )
 }
