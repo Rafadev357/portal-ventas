@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import styles from '../Submenu.css'
+import '../Submenu.css'
 
 /**
  * 
@@ -13,7 +13,7 @@ export const MostrarSubmenu = ({submenu, persona}) => {
 
     const navigate = useNavigate();
         return (
-            <ul className={styles.submenu__list} >
+            <ul className='submenu__list' >
                         {submenu.map(item =>{
                     return <li key={item.id}><button onClick={()=>{
                         navigate(`/${persona}`, {
