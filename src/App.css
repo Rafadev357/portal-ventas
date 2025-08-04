@@ -56,35 +56,6 @@ body{
     text-shadow: 3px 3px 8px;
 }
 
-/*.submenu{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    margin-top: 10px;
-    background-color: #d0d3d4;
-    display: block;
-}
-
-.submenu__list{
-    display: block;
-    flex-direction: column; /
-    gap: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.submenu__list li{
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    display: block;
-}
-
-.submenu__list li:hover{
-    color: blue;
-}*/
 
 .content{
     min-height: calc(100dvh - 140px);
@@ -692,4 +663,39 @@ body{
 .layout__pasarela-pago__resumen span{
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+/* Estilos para Tablets y pantallas más pequeñas */
+@media (max-width: 768px) {
+    /* Hacemos que la barra de navegación ocupe todo el ancho */
+    .nav {
+        flex-direction: column; /* Apila los enlaces verticalmente si usas flexbox */
+        align-items: center;
+    }
+     /* Hacemos que las imágenes de los productos ocupen más espacio */
+    .products img {
+        width: 80%; /* Ocupan más ancho en pantallas pequeñas */
+        margin: 10px auto; /* Centramos las imágenes */
+    }
+}
+
+/* Estilos para Móviles */
+@media (max-width: 480px) {
+    /* Reducimos el tamaño de los títulos para que quepan */
+    h1 {
+        font-size: 2em; /* Un tamaño más adecuado para móviles */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    /* Hacemos que el contenedor de productos sea más simple */
+    .products {
+        display: block; /* Quitamos el display: flex si lo tienes */
+    }
+
+    .products img {
+       width: 100%; /* Hacemos que cada producto ocupe todo el ancho */
+    }
 }
