@@ -56,18 +56,19 @@ body{
     text-shadow: 3px 3px 8px;
 }
 
-.submenu{
+/*.submenu{
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 999;
+    z-index: 1;
     margin-top: 10px;
     background-color: #d0d3d4;
+    display: block;
 }
 
 .submenu__list{
-    display: flex;
-    flex-direction: column; /* ✅ asegura columna */
+    display: block;
+    flex-direction: column; /
     gap: 10px;
     list-style: none;
     margin: 0;
@@ -78,11 +79,12 @@ body{
     padding: 8px 15px;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
+    display: block;
 }
 
 .submenu__list li:hover{
     color: blue;
-}
+}*/
 
 .content{
     min-height: calc(100dvh - 140px);

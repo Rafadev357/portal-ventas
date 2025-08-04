@@ -13,7 +13,6 @@ export const HeaderNav = () => {
      * que renderiza en una lista los elementos del objeto submenu.
      */
     const [enter, setEnter] = useState(null);
-    const [locked, setLocked] = useState(false);
 
     //useRef para referenciar un valor
     const timeoutRef = useRef(null);
