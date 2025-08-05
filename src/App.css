@@ -19,10 +19,11 @@ body{
     height: 100dvh;
     position: relative;
     background-color: rgb(251, 252, 252);
+    font-family: 'SM_Serif_Text', sans-serif;
 }
 
 .content__header{
-    height: 180px;
+    min-height: 180px;
     position: relative;
     display: flex;
     flex-direction: column;
