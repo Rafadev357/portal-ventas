@@ -24,6 +24,8 @@ body{
 
 .content__header{
     min-height: 180px;
+    max-width: 100%;
+    min-width: 1905px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -34,7 +36,7 @@ body{
 }
 
 .content__header ul{
-    width: 50rem;
+    min-width: 50rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -44,7 +46,7 @@ body{
 }
 
 .content__logo{
-    width: 100%;
+    min-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
