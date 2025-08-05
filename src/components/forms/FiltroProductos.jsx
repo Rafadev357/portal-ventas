@@ -50,7 +50,7 @@ export const FiltroProductos = ({onFiltrar}) => {
                     <option value="On">On</option>
                 </select>
             </label>
-            <label htmlFor="precio">
+            <label htmlFor="precio" className='slide'>
                 Rango de precios:
                 <span> {min} - </span><span>{max}</span>
                 <input type="range" name="precio_min" id="precio_min"
